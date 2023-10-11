@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body>
+    <h1>Available Products</h1>
+    
+    <ul>
+        {% for product in products %}
+        <li>
+            <a href="{{ url_for('shop.view_product', product_id=product.id) }}">
+                {{ product.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{{ url_for('shop.view_cart') }}">View Cart</a>
+</body>
+</html>
